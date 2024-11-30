@@ -1,18 +1,18 @@
 import React from "react";
 import Button from "../Button/Button";
 import "./Navbar.css"
+import { useTelegram } from "../../hooks/useTelegram";
 
-const tg = window.Telegram.WebApp;
 
 export default function Navbar() {
-  const username = "dwadawd";
-  const Close = () => {
-    tg.close();
-  };
+
+  const {onClose,user} = useTelegram()
+
+
   return (
     <div className="navbar">
-      <h3>{tg.initDataUnsafe?.user?.username}</h3>
-      <Button onClick={Close}>Close</Button>
+      <h3>{user?.username}</h3>
+      <Button onClick={onClose}>Close</Button>
     </div>
   );
 }
