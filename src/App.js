@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from "./compotents/Navbar/Navbar"
 import "./App.css"
 const tg = window.Telegram.WebApp
 
@@ -8,12 +9,10 @@ export default function App() {
     tg.ready()
   },[])
 
-  const Close = () => {
-    tg.close()
-  }
+
   return (
-    <div>
-        <button onClick={Close}>Close</button>
+    <div> 
+      <Navbar></Navbar>
     </div>
   )
 }
