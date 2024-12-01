@@ -15,7 +15,7 @@ export default function Products() {
     {
       title: "apple",
       description: "this is the best apple!",
-      price: "199$",
+      price: 1500,
     },
   ]);
   const [addItem, setAddItem] = React.useState([]);
