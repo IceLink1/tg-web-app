@@ -21,13 +21,13 @@ export default function Products() {
   const [addItem, setAddItem] = React.useState([]);
 
   const onAdd = (product) => {
-    let addedProduct = addItem.find((item) => item.id === product.id);
+    let addedProduct = addItem.find(item => item.id === product.id)
     let newProductList = [];
 
     if (addedProduct) {
-      newProductList = addedProduct.filter((item) => item.id !== product.id);
+      newProductList = addedProduct.filter(item => item.id !== product.id);
     } else {
-      newProductList = [...addedProduct, product];
+      newProductList = [...addItem, product];
     }
     setAddItem(newProductList);
 
