@@ -13,7 +13,7 @@ export default function Form() {
       valueName,
       valueEmail,
       valuePassword,
-    };
+    }
     tg.sendData(JSON.stringify(data));
   }, [valueName, valueEmail, valuePassword]);
   React.useEffect(() => {
