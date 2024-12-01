@@ -1,10 +1,25 @@
 import React from "react";
 import "./Form.css";
+import { useTelegram } from "../../hooks/useTelegram";
 
 export default function Form() {
   const [valueName, setValueName] = React.useState("");
   const [valueEmail, setValueEmail] = React.useState("");
   const [valuePassword, setValuePassword] = React.useState("");
+  const { tg } = useTelegram();
+
+  React.useEffect(() => {
+    tg.MainButton.setParams({
+      text: "Send Data",
+    });
+  }, []);
+  React.useEffect(() => {
+    if (!valueEmail || !valueName || !valuePassword) {
+      tg.MainButton.hide();
+    } else {
+      tg.MainButton.show();
+    }
+  }, [valueEmail, valueName, valuePassword]);
 
   const Login = () => {
     setValueName("");
@@ -35,9 +50,6 @@ export default function Form() {
           onChange={(e) => setValuePassword(e.target.value)}
           value={valuePassword}
         />
-        <button className="button" onClick={Login}>
-          Send
-        </button>
       </div>
     </div>
   );
