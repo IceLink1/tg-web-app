@@ -1,10 +1,10 @@
 .product_item {
   width: 40vw;
-  height: 20vh;
+  min-height: 20vh;
   padding: 5px;
   border: 2px solid var(--tg-theme-text-color);
-  & img {
-    height: 10vh;
+  & .img {
+    width: 40vw;
     border: 1px solid var(--tg-theme-text-color);
   }
   & .title {

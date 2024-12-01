@@ -3,8 +3,8 @@ import { useTelegram } from "../../hooks/useTelegram";
 import "./Products.css";
 import ProductItem from "./ProductItem";
 
-const AllPrice = (item = []) => {
-  return item.reduce((acc, item) => {
+const AllPrice = (items = []) => {
+  return items.reduce((acc, item) => {
     return (acc += item.price);
   }, 0);
 };
@@ -20,7 +20,7 @@ export default function Products() {
   ]);
   const [addItem, setAddItem] = React.useState([]);
 
- const onAdd = (product) => {
+  const onAdd = (product) => {
     let addedProduct = addItem.find((item) => item.id === product.id);
     let newProductList = [];
 
@@ -44,7 +44,7 @@ export default function Products() {
   return (
     <div className="Products">
       {products.map((product) => (
-        <ProductItem product={product} onAdd={onAdd} className="items"/>
+        <ProductItem product={product} onAdd={onAdd} className="items" />
       ))}
     </div>
   );
