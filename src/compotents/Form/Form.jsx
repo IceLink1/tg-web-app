@@ -15,11 +15,11 @@ export default function Form() {
       valuePassword,
     };
     tg.sendData(JSON.stringify(data));
-  }, []);
+  }, [valueName, valueEmail, valuePassword]);
   React.useEffect(() => {
-    tg.onEvent("mainButtonClicked", SendData);
+    tg.onClick("mainButtonClicked", SendData);
     return () => {
-      tg.offEvent("mainButtonClicked", SendData);
+      tg.offClick("mainButtonClicked", SendData);
     };
   }, []);
 
