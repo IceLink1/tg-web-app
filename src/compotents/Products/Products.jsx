@@ -20,8 +20,8 @@ export default function Products() {
   ]);
   const [addItem, setAddItem] = React.useState([]);
 
-  onAdd = (product) => {
-    addedProduct = addItem.find((item) => item.id === product.id);
+ const onAdd = (product) => {
+    let addedProduct = addItem.find((item) => item.id === product.id);
     let newProductList = [];
 
     if (addedProduct) {
@@ -44,7 +44,7 @@ export default function Products() {
   return (
     <div className="Products">
       {product.map((product) => (
-        <ProductItem product={product} onAdd={null} />
+        <ProductItem product={product} onAdd={onAdd} />
       ))}
     </div>
   );

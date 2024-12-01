@@ -7,7 +7,7 @@ import Products from "./compotents/Products/Products";
 import Form from "./compotents/Form/Form";
 
 export default function App() {
-  const { tg, onToggle } = useTelegram();
+  const { tg } = useTelegram();
 
   React.useEffect(() => {
     tg.ready();
