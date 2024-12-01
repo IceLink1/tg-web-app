@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "./compotents/Navbar/Navbar";
 import "./App.css";
 import { useTelegram } from "./hooks/useTelegram";
+import { Route, Routes } from "react-router-dom";
+import Products from "./compotents/Products/Products";
+import Form from "./compotents/Form/Form";
 
 export default function App() {
   const { tg, onToggle } = useTelegram();
@@ -13,7 +16,10 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <button className="button" onClick={onToggle}>Toggle</button>
+      <Routes>
+        <Route index element={<Products />} />
+        <Route path="/form" element={<Form />} />
+      </Routes>
     </div>
   );
 }
