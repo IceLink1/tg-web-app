@@ -17,9 +17,9 @@ export default function Form() {
     tg.sendData(JSON.stringify(data));
   }, [valueName, valueEmail, valuePassword]);
   React.useEffect(() => {
-    tg.onClick("mainButtonClicked", SendData);
+    tg.onEvent("mainButtonClicked", SendData);
     return () => {
-      tg.offClick("mainButtonClicked", SendData);
+      tg.offEvent("mainButtonClicked", SendData);
     };
   }, []);
 
