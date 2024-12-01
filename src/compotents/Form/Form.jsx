@@ -8,6 +8,21 @@ export default function Form() {
   const [valuePassword, setValuePassword] = React.useState("");
   const { tg } = useTelegram();
 
+  const SendData = React.useCallback(() => {
+    const data = {
+      valueName,
+      valueEmail,
+      valuePassword,
+    };
+    tg.sendData(JSON.stringify(data));
+  }, []);
+  React.useEffect(() => {
+    tg.onEvent("mainButtonClicked", SendData);
+    return () => {
+      tg.offEvent("mainButtonClicked", SendData);
+    };
+  }, []);
+
   React.useEffect(() => {
     tg.MainButton.setParams({
       text: "Send Data",
