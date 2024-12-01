@@ -25,7 +25,7 @@ export default function Products() {
     let newProductList = [];
 
     if (addedProduct) {
-      newProductList = addedProduct.filter(item => item.id !== product.id);
+      newProductList = addItem.filter(item => item.id !== product.id);
     } else {
       newProductList = [...addItem, product];
     }
