@@ -8,7 +8,7 @@ export default function ProductItem({product,className,onAdd}) {
         onAdd(product)
     }
   return (
-    <div className='product_item'>       
+    <div className={'product_item '+ className}>       
         <img className='img' src={img} alt="apple" />
         <div className='title'>{product.title}</div>
         <div className='description'>{product.description}</div>

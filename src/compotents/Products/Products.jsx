@@ -11,7 +11,7 @@ const AllPrice = (item = []) => {
 
 export default function Products() {
   const { tg } = useTelegram();
-  const [product, setProduct] = React.useState([
+  const [products, setProduct] = React.useState([
     {
       title: "apple",
       description: "this is the best apple!",
@@ -43,8 +43,8 @@ export default function Products() {
 
   return (
     <div className="Products">
-      {product.map((product) => (
-        <ProductItem product={product} onAdd={onAdd} />
+      {products.map((product) => (
+        <ProductItem product={product} onAdd={onAdd} className="items"/>
       ))}
     </div>
   );
