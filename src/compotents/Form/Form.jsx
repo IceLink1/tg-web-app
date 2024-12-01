@@ -21,7 +21,7 @@ export default function Form() {
     return () => {
       tg.offEvent("mainButtonClicked", SendData);
     };
-  }, []);
+  }, [SendData]);
 
   React.useEffect(() => {
     tg.MainButton.setParams({

@@ -1,0 +1,13 @@
+.product_item{
+    width: 40vw;
+    height: 20vh;
+    padding: 5px;
+    border: 2px solid var(--tg-theme-text-color);
+    & .img{
+        height: 10vh;
+        border: 1px solid var(--tg-theme-text-color);
+    }
+    & .title {
+        font-size: larger;
+    }
+}
